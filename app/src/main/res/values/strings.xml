@@ -1,3 +1,34 @@
 <resources>
     <string name="app_name">HirupSehat</string>
+    <string name="profile_image_desc">Foto Profil Pengguna</string>
+    <string name="edit_profile_image_desc">Edit Foto Profil</string>
+    <string name="ranking_placeholder">#1</string>
+    <string name="hint_name">Nama Lengkap</string>
+    <string name="hint_phone">No. HP</string>
+    <string name="hint_bio">Bio</string>
+    <string name="hint_email">Email</string>
+    <string name="hint_birthdate">Tanggal Lahir</string>
+    <string name="choose_border">Pilih Border Profil</string>
+    <string name="choose_banner">Pilih Banner Profil</string>
+    <string name="button_save">Simpan</string>
+    <string name="button_update_profile">Perbarui Profil</string>
+    <string name="ranking_text_placeholder">#%1$d</string>
+    <string name="error_loading_profile">Gagal memuat data profil!</string>
+    <string name="correct_message">Benar! Kamu hebat!</string>
+    <string name="incorrect_message">Salah! Coba lagi!</string>
+    <string name="input_instruction">Ingat urutan angka berikut!</string>
+
+
+
+    <string-array name="border_options">
+        <item>Gold Border</item>
+        <item>Silver Border</item>
+        <item>Default Border</item>
+    </string-array>
+
+    <string-array name="banner_options">
+        <item>Aurora Banner</item>
+        <item>Sunset Banner</item>
+        <item>Default Banner</item>
+    </string-array>
 </resources>

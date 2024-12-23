@@ -8,10 +8,10 @@
             <InsightsFilterSettings>
               <option name="connection">
                 <ConnectionSetting>
-                  <option name="appId" value="PLACEHOLDER" />
-                  <option name="mobileSdkAppId" value="" />
-                  <option name="projectId" value="" />
-                  <option name="projectNumber" value="" />
+                  <option name="appId" value="com.example.hirupsehat" />
+                  <option name="mobileSdkAppId" value="1:498545880619:android:a44ec12e0dbe13ae03046e" />
+                  <option name="projectId" value="hirupsehat-e8fe7" />
+                  <option name="projectNumber" value="498545880619" />
                 </ConnectionSetting>
               </option>
               <option name="signal" value="SIGNAL_UNSPECIFIED" />

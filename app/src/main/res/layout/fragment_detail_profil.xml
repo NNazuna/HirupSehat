@@ -9,7 +9,7 @@
         android:id="@+id/detail_profile_image"
         android:layout_width="100dp"
         android:layout_height="100dp"
-        android:src="@drawable/profile_picture"
+        android:src="@drawable/pfp"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />

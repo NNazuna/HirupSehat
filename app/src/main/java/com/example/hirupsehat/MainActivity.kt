@@ -1,51 +1,53 @@
+//Nama kelompok : KANI
+//Anggota : Rafa Rafdhitya Riyanto ( 22523079 ), Anisah Fitri Maisaroh ( 22523130 ), Rizaldi Raditya Althaf (22523256), Dedhanof Ahnaf Faiz P. ( 22523301 )
+//username : zae@gmail.com  password : 123qwe
 package com.example.hirupsehat
 
 import android.os.Bundle
-import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.view.ViewCompat
-import androidx.core.view.WindowInsetsCompat
 import androidx.fragment.app.Fragment
 import com.google.android.material.bottomnavigation.BottomNavigationView
 
 class MainActivity : AppCompatActivity() {
+
+    private lateinit var bottomNavigationView: BottomNavigationView
+    private var userId: String? = null
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        enableEdgeToEdge()
         setContentView(R.layout.activity_main)
 
-        val bottomNavigationView = findViewById<BottomNavigationView>(R.id.bottom_navigation)
-        bottomNavigationView.setOnNavigationItemSelectedListener { item ->
+        // Ambil USER_ID dari intent
+        userId = intent.getStringExtra("USER_ID")
+
+        bottomNavigationView = findViewById(R.id.bottom_navigation)
+
+        // Default fragment
+        if (savedInstanceState == null) {
+            loadFragment(HomeFragment())
+        }
+
+        // Navigasi antar fragment
+        bottomNavigationView.setOnItemSelectedListener { item ->
             when (item.itemId) {
                 R.id.navigation_home -> {
                     loadFragment(HomeFragment())
                     true
                 }
-                R.id.navigation_pencapaian -> {
-                    loadFragment(PencapaianFragment())
-                    true
-                }
                 R.id.navigation_user -> {
-                    loadFragment(UserFragment())
+                    val userFragment = UserFragment()
+                    val bundle = Bundle()
+                    bundle.putString("USER_ID", userId)
+                    userFragment.arguments = bundle
+                    loadFragment(userFragment)
                     true
                 }
-                R.id.navigation_gamifikasi -> {
+                R.id.nav_gamifikasi -> {
                     loadFragment(GamifikasiFragment())
                     true
                 }
                 else -> false
             }
-        }
-
-        // Load default fragment
-        if (savedInstanceState == null) {
-            bottomNavigationView.selectedItemId = R.id.navigation_home
-        }
-
-        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
-            val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
-            v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
-            insets
         }
     }
 
